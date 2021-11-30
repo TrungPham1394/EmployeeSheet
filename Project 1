@@ -1,0 +1,183 @@
+--I will begin by creating a Employee sheet including its categorizations
+
+
+CREATE TABLE EmployeeSheet
+(EmployeeID int, 
+FirstName varchar(50),
+LastName varchar(50),
+Age int,
+Gender varchar(50),
+Location varchar(50),
+Department varchar(50),
+Salary int
+)
+
+
+--I would need to input the datas into this sheet and I would do it by typing these
+
+
+INSERT INTO EmployeeSheet VALUES 
+(1001, 'Trung', 'Pham', 27, 'Male', 'Garden Grove', 'Logistics', 30000),
+(1002, 'Bruce', 'Wayne', 28, 'Male', 'Garden Grove', 'Maintainence', 25000),
+(1003, 'Clark', 'James', 32, 'Male', 'Cypress', 'System IT', 35000),
+(1004, 'Kevin', 'Tran', 36, 'Male', 'Fountain Valley', 'Logistics', 30000),
+(1005, 'Jose', 'Garcia', 38, 'Male', 'Cypress', 'Human Resources', 40000),
+(1006, 'Patrick', 'Tran', 63, 'Male', 'Garden Grove', 'Maintainence', 25000),
+(1007, 'Michael', 'Nguyen', 21, 'Male', 'Eastvale', 'System IT', 35000),
+(1008, 'Timmy', 'Nguyen', 33, 'Male', 'Los Angeles', 'Logistics', 30000),
+(1009, 'Helen', 'Tran', 21, 'Female', 'Garden Grove', 'Human Resources', 40000),
+(1010, 'Nico', 'Davis', 27, 'Female', 'Cypress', 'System IT', 35000),
+(1011, 'Tomas', 'Somas', 53, 'Male', 'Eastvale', 'Sales', 50000),
+(1012, 'Cindy', 'Ramirez', 37, 'Female', 'Cypress', 'Sales', 50000),
+(1013, 'Robert', 'Park', 29, 'Male', 'Fountain Valley', 'Logistics', 30000),
+(1014, 'Luis', 'Garcia', 33, 'Male', 'Fountain Valley', 'Sales', 50000),
+(1015, 'Troy', 'Baker', 31, 'Male', 'Garden Grove', 'Sales', 50000),
+(1016, 'Kevin', 'Nguyen', 39, 'Male', 'Garden Grove', 'Production', 20000),
+(1017, 'Michael', 'Lee', 64, 'Male', 'Cypress', 'Production', 20000),
+(1018, 'Annie', 'Nguyen', 23, 'Female', 'Garden Grove', 'Sales', 50000),
+(1019, 'Jennifer', 'Tran', 26, 'Female', 'Fullerton', 'Logistics', 30000),
+(1020, 'Jenny', 'Lopez', 64, 'Female', 'San Diego', 'Sales', 50000),
+(1021, 'Jessica', 'Lopez', 78, 'Female', 'Cypress', 'Janitorial', 20000),
+(1022, 'Jason', 'Williams', 60, 'Male', 'Fullerton', 'Janitorial', 20000),
+(1023, 'Nura', 'Garcia', 35, 'Female', 'San Diego', 'System IT', 35000),
+(1024, 'John', 'Smith', 25, 'Male', 'Los Angeles', 'System IT', 35000),
+(1025, 'Helen', 'Miller', 22, 'Female', 'Eastvale', 'Human Resources', 40000)
+
+
+--Then I will select the "Employee sheet" table from the database
+
+
+SELECT *
+FROM EmployeeSheet
+
+
+--Or, If I want to be more specific and select the database with the employee sheet, 
+--then I would type this in
+
+
+SELECT *
+FROM DataDB.dbo.EmployeeSheet
+
+
+--All of the datas are being shown here. If I want to select just the first 
+--and last name of all of the employees, I would type this and execute it. 
+
+
+SELECT FirstName, LastName
+FROM EmployeeSheet
+
+
+--To be more specific, if I want the first and last name of the employees with Employee IDs from
+--1001 to 1015, this is what I would type 
+
+
+SELECT EmployeeID, FirstName, LastName
+FROM EmployeeSheet
+WHERE EmployeeID <= 1015
+
+
+--This will show which employees live in Garden Grove who also have a salary under $50,000
+
+
+SELECT FirstName, LastName, Location, Salary
+FROM EmployeeSheet
+WHERE Location = 'Garden Grove' AND Salary < 50000
+
+
+--This will show all of the male employees who work in the Logistics department
+
+
+SELECT FirstName, LastName, Gender, Department
+FROM EmployeeSheet
+WHERE Gender = 'Male' AND Department = 'Logistics'
+
+
+--If I want to know the employees who are at the age from 30 to 60 and order it from least to greatest,
+--I would type it like this
+
+
+SELECT FirstName, LastName, Age
+FROM EmployeeSheet
+WHERE Age BETWEEN 30 AND 60
+ORDER BY Age ASC
+
+
+--By typing this and executing it, I would find out which employees are equal to or less than 25 years old 
+--or are females
+
+
+SELECT *
+FROM EmployeeSheet
+WHERE Age <=25 OR Gender = 'Female';
+
+
+--In order to find the names of the locations that start with the letter 'G' or ends with the little 'e', 
+--I would type it like this. The results will show "Garden Grove" and "Eastvale"
+
+
+SELECT Location
+FROM EmployeeSheet
+WHERE Location LIKE 'G%'
+	OR Location LIKE '%e';
+
+
+--Or if I don't want a location that has the word "Garden Grove" in it, 
+--then this is what I would type without showing any repeats of the locations. 
+
+
+SELECT DISTINCT Location
+FROM EmployeeSheet
+WHERE Location != 'Garden Grove' 
+
+
+--As for the first name column, I can find out which employee has the first name that starts with the 
+--Letter T and has a G somewhere in their name by typing this. This will show "Trung"
+
+
+SELECT FirstName
+FROM EmployeeSheet
+WHERE FirstName LIKE 'T%G%';
+
+
+--The following steps will show me all of the employees who are in the logistics and janitorial departments
+
+
+SELECT *
+FROM EmployeeSheet
+WHERE Department IN ('Logistics', 'Janitorial')
+
+
+--This will determine how many counts of Salaries are there from the Employee Sheet table.
+
+
+SELECT COUNT (Salary) AS SalaryCount
+FROM EmployeeSheet
+
+
+--This will show the most amount of salary from the employee sheet
+
+
+SELECT MAX(Salary)
+FROM EmployeeSheet
+
+
+--Whereas this will show the least amount of salary from the employee sheet
+
+
+SELECT MIN(Salary)
+FROM EmployeeSheet
+
+
+--This will also show the average of the salary among all of the employees
+
+
+SELECT AVG(Salary)
+FROM EmployeeSheet
+
+
+--This will show how many employees are males and females
+
+
+SELECT Gender, COUNT(Gender) AS GenderCount
+From EmployeeSheet
+GROUP BY Gender
