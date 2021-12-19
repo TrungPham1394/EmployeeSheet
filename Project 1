@@ -1,8 +1,8 @@
---I will begin by creating a Employee sheet including its categorizations
+--I will begin by creating a Employee sheet including its categorizations. 
 
 
 CREATE TABLE EmployeeSheet
-(EmployeeID int, 
+(EmployeeID int PRIMARY KEY IDENTITY (1001,1),
 FirstName varchar(50),
 LastName varchar(50),
 Age int,
@@ -17,31 +17,31 @@ Salary int
 
 
 INSERT INTO EmployeeSheet VALUES 
-(1001, 'Trung', 'Pham', 27, 'Male', 'Garden Grove', 'Logistics', 30000),
-(1002, 'Bruce', 'Wayne', 28, 'Male', 'Garden Grove', 'Maintainence', 25000),
-(1003, 'Clark', 'James', 32, 'Male', 'Cypress', 'System IT', 35000),
-(1004, 'Kevin', 'Tran', 36, 'Male', 'Fountain Valley', 'Logistics', 30000),
-(1005, 'Jose', 'Garcia', 38, 'Male', 'Cypress', 'Human Resources', 40000),
-(1006, 'Patrick', 'Tran', 63, 'Male', 'Garden Grove', 'Maintainence', 25000),
-(1007, 'Michael', 'Nguyen', 21, 'Male', 'Eastvale', 'System IT', 35000),
-(1008, 'Timmy', 'Nguyen', 33, 'Male', 'Los Angeles', 'Logistics', 30000),
-(1009, 'Helen', 'Tran', 21, 'Female', 'Garden Grove', 'Human Resources', 40000),
-(1010, 'Nico', 'Davis', 27, 'Female', 'Cypress', 'System IT', 35000),
-(1011, 'Tomas', 'Somas', 53, 'Male', 'Eastvale', 'Sales', 50000),
-(1012, 'Cindy', 'Ramirez', 37, 'Female', 'Cypress', 'Sales', 50000),
-(1013, 'Robert', 'Park', 29, 'Male', 'Fountain Valley', 'Logistics', 30000),
-(1014, 'Luis', 'Garcia', 33, 'Male', 'Fountain Valley', 'Sales', 50000),
-(1015, 'Troy', 'Baker', 31, 'Male', 'Garden Grove', 'Sales', 50000),
-(1016, 'Kevin', 'Nguyen', 39, 'Male', 'Garden Grove', 'Production', 20000),
-(1017, 'Michael', 'Lee', 64, 'Male', 'Cypress', 'Production', 20000),
-(1018, 'Annie', 'Nguyen', 23, 'Female', 'Garden Grove', 'Sales', 50000),
-(1019, 'Jennifer', 'Tran', 26, 'Female', 'Fullerton', 'Logistics', 30000),
-(1020, 'Jenny', 'Lopez', 64, 'Female', 'San Diego', 'Sales', 50000),
-(1021, 'Jessica', 'Lopez', 78, 'Female', 'Cypress', 'Janitorial', 20000),
-(1022, 'Jason', 'Williams', 60, 'Male', 'Fullerton', 'Janitorial', 20000),
-(1023, 'Nura', 'Garcia', 35, 'Female', 'San Diego', 'System IT', 35000),
-(1024, 'John', 'Smith', 25, 'Male', 'Los Angeles', 'System IT', 35000),
-(1025, 'Helen', 'Miller', 22, 'Female', 'Eastvale', 'Human Resources', 40000)
+('Trung', 'Pham', 27, 'Male', 'Garden Grove', 'Logistics', 30000),
+('Bruce', 'Wayne', 28, 'Male', 'Garden Grove', 'Maintainence', 25000),
+('Clark', 'James', 32, 'Male', 'Cypress', 'System IT', 35000),
+('Kevin', 'Tran', 36, 'Male', 'Fountain Valley', 'Logistics', 30000),
+('Jose', 'Garcia', 38, 'Male', 'Cypress', 'Human Resources', 40000),
+('Patrick', 'Tran', 63, 'Male', 'Garden Grove', 'Maintainence', 25000),
+('Michael', 'Nguyen', 21, 'Male', 'Eastvale', 'System IT', 35000),
+('Timmy', 'Nguyen', 33, 'Male', 'Los Angeles', 'Logistics', 30000),
+('Helen', 'Tran', 21, 'Female', 'Garden Grove', 'Human Resources', 40000),
+('Nico', 'Davis', 27, 'Female', 'Cypress', 'System IT', 35000),
+('Tomas', 'Somas', 53, 'Male', 'Eastvale', 'Sales', 50000),
+('Cindy', 'Ramirez', 37, 'Female', 'Cypress', 'Sales', 50000),
+('Robert', 'Park', 29, 'Male', 'Fountain Valley', 'Logistics', 30000),
+('Luis', 'Garcia', 33, 'Male', 'Fountain Valley', 'Sales', 50000),
+('Troy', 'Baker', 31, 'Male', 'Garden Grove', 'Sales', 50000),
+('Kevin', 'Nguyen', 39, 'Male', 'Garden Grove', 'Production', 20000),
+('Michael', 'Lee', 64, 'Male', 'Cypress', 'Production', 20000),
+('Annie', 'Nguyen', 23, 'Female', 'Garden Grove', 'Sales', 50000),
+('Jennifer', 'Tran', 26, 'Female', 'Fullerton', 'Logistics', 30000),
+('Jenny', 'Lopez', 64, 'Female', 'San Diego', 'Sales', 50000),
+('Jessica', 'Lopez', 78, 'Female', 'Cypress', 'Janitorial', 20000),
+('Jason', 'Williams', 60, 'Male', 'Fullerton', 'Janitorial', 20000),
+('Nura', 'Garcia', 35, 'Female', 'San Diego', 'System IT', 35000),
+('John', 'Smith', 25, 'Male', 'Los Angeles', 'System IT', 35000),
+('Helen', 'Miller', 22, 'Female', 'Eastvale', 'Human Resources', 40000)
 
 
 --Then I will select the "Employee sheet" table from the database
