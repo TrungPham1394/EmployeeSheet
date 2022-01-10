@@ -92,6 +92,18 @@ FROM EmployeeSheet
 WHERE Gender = 'Male' AND Department = 'Logistics'
 
 
+
+--This will revise the names of the employees by using CASE
+
+
+SELECT CASE
+	WHEN FirstName = 'Trung' THEN 'Trang'
+	WHEN FirstName = 'Jason' THEN 'Justin'
+	ELSE FirstName 
+	END AS RevisedFirstName
+FROM EmployeeSheet
+
+
 --If I want to know the employees who are at the age from 30 to 60 and order it from least to greatest,
 --I would type it like this
 
