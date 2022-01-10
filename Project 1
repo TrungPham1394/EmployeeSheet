@@ -181,3 +181,11 @@ FROM EmployeeSheet
 SELECT Gender, COUNT(Gender) AS GenderCount
 From EmployeeSheet
 GROUP BY Gender
+
+
+
+--By using LEN, this will show me all of the first names that have four letters or less. The results should show Jose, Nico, Luis, and more.
+
+SELECT *
+FROM EmployeeSheet
+WHERE Len(FirstName) <= 4
